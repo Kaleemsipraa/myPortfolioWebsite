@@ -1,0 +1,647 @@
+/* ---------------  Basic code    --------------- */
+@import url('https://fonts.googleapis.com/css2?family=Kurale&family=Sofadi+One&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+:root {
+  --primary-color: #01c4ff; /* Bright Cyan */
+  --secondary-color: #ff9800; /* Warm Orange */
+  --text-color: #000000; /* Black */
+  --acent-color: #044553; /* Dark Cyan/Teal */
+}
+
+/* ---------------  Comman Classes    --------------- */
+a,
+li {
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+
+/* ---------------  Header and navbar section      --------------- */
+#nav-bar {
+  position: fixed;
+  backdrop-filter: blur(10px);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+nav {
+  width: 100%;
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 0px 1px var(--text-color);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-color);
+  letter-spacing: -1px;
+  font-family: "Sofadi One", system-ui;
+  z-index: 1000;
+  position: relative;
+}
+
+.logo span {
+  font-family: "Sofadi One", system-ui;
+  color: var(--primary-color);
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: 0.8s;
+}
+
+.nav-menu #close {
+  display: none;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  padding: 12px 6px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  position: relative;
+}
+
+.nav-link::after,
+.nav-link::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  transition: all 0.35s ease;
+  position: absolute;
+  opacity: 0;
+}
+
+.nav-link::before {
+  right: 0;
+  top: 0;
+  border-right: 3px solid var(--acent-color);
+  border-top: 3px solid var(--acent-color);
+  transform: translate(-100%, 50%);
+}
+
+.nav-link::after {
+  left: 0;
+  bottom: 0;
+  border-left: 3px solid var(--acent-color);
+  border-bottom: 3px solid var(--acent-color);
+  transform: translate(100%, -50%);
+}
+
+.nav-link:hover:before,
+.nav-link:hover:after {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.menu-btn {
+  font-size: 1.4rem;
+  display: none;
+}
+
+/* ---------------  Home Section  --------------- */
+
+.home-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-top: 130px;
+  padding-bottom: 80px;
+}
+
+.home-section-content {
+  width: 50%;
+}
+
+.hi {
+  font-size: 1.5rem;
+  font-family: "Sofadi One", system-ui;
+  margin-bottom: 10px;
+}
+
+.home-details {
+  font-size: 1.1rem;
+  line-height: 35px;
+  margin: 15px 0px;
+}
+
+.home-span {
+  color: var(--acent-color);
+  font-weight: bold;
+  font-family: "Sofadi One", system-ui;
+}
+
+.span-skil {
+  background-color: var(--secondary-color);
+}
+
+.home-section-img {
+  position: relative;
+}
+
+.home-section-img img {
+  width: 350px;
+}
+
+.line {
+  border-right: 4px solid var(--acent-color);
+  color: var(--acent-color);
+  font-size: 3em;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: fit-content;
+}
+
+.typing-animation {
+  animation: blinkCursor 500ms steps(40) infinite normal,
+    typing 3s steps(40) 1s infinite normal both;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 14em;
+  }
+}
+
+@keyframes blinkCursor {
+  from {
+    border-right-color: var(--secondary-color);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+/* ---------------  About Section  --------------- */
+
+.about-section {
+  width: 100%;
+
+  padding: 60px 0px;
+}
+
+.about-section-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-image {
+  border: 5px solid var(--secondary-color);
+  position: relative;
+  width: 320px;
+  height: 330px;
+  border-radius: 8px;
+}
+
+.about-section img {
+  width: 95%;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  box-shadow: 0px 5px 8px var(--text-color);
+}
+
+.about-content {
+  width: 55%;
+}
+
+.about-heading {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color: var(--acent-color);
+}
+
+.about-details {
+  font-size: 1rem;
+  line-height: 30px;
+  margin-bottom: 12px;
+}
+
+.about-span {
+  font-family: "Sofadi One", system-ui;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+.social-media-handels {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-media-handels a i {
+  font-size: 1.5rem;
+  border: 2px solid var(--secondary-color);
+  padding: 5px;
+  border-radius: 50%;
+  text-align: center;
+  color: var(--acent-color);
+  transition: all 0.2s;
+}
+
+.handle {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-media-handels a i:hover {
+  background-color: var(--acent-color);
+  color: white;
+  transform: rotate(360deg);
+}
+
+/* ---------------  Skills Section  --------------- */
+
+.skills-details {
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 10px 50px;
+  margin-bottom: 20px;
+}
+
+.skill-span {
+  font-family: "Sofadi One", system-ui;
+  color: var(--acent-color);
+  font-weight: 700;
+}
+
+.skills-bars-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.skill-bar {
+  width: 40%;
+  margin: 20px auto;
+}
+
+.skill-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--acent-color);
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.skill-name > span {
+  position: absolute;
+  top: 0;
+  right: 1%;
+}
+
+.skill-bar-bg {
+  width: 100%;
+  height: 15px;
+  background-color: var(--acent-color);
+  border-radius: 8px;
+}
+
+.skill-bar-bg #html {
+  width: 90%;
+  background-color: var(--secondary-color);
+  height: 15px;
+  border-radius: 8px;
+}
+.skill-bar-bg #css {
+  width: 70%;
+  background-color: var(--secondary-color);
+  height: 15px;
+  border-radius: 8px;
+}
+.skill-bar-bg #js {
+  width: 80%;
+  background-color: var(--secondary-color);
+  height: 15px;
+  border-radius: 8px;
+}
+.skill-bar-bg #tailwindcss {
+  width: 60%;
+  background-color: var(--secondary-color);
+  height: 15px;
+  border-radius: 8px;
+}
+.skill-bar-bg #bootstrap {
+  width: 40%;
+  background-color: var(--secondary-color);
+  height: 15px;
+  border-radius: 8px;
+}
+.skill-bar-bg #react {
+  width: 70%;
+  background-color: var(--secondary-color);
+  height: 15px;
+  border-radius: 8px;
+}
+.skill-bar-bg #node {
+  width: 90%;
+  background-color: var(--secondary-color);
+  height: 15px;
+  border-radius: 8px;
+}
+.skill-bar-bg #git {
+  width: 90%;
+  background-color: var(--secondary-color);
+  height: 15px;
+  border-radius: 8px;
+}
+
+.skills-section {
+  padding: 60px 0px;
+}
+
+/* ---------------  Portfolio Section  --------------- */
+
+.portfolio-section {
+  padding: 60px 0px;
+}
+
+.portfolio-hadline {
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: "Sofadi One", system-ui;
+}
+
+.hadline-span {
+  color: var(--acent-color);
+  font-weight: 700;
+  font-size: 1.3rem;
+  font-family: "Sofadi One", system-ui;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* cards section  */
+
+.card-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 30px 0px;
+}
+
+.project-card {
+  width: 300px;
+  height: 300px;
+  padding: 10px 12px;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 10px;
+  box-shadow: 0px 0px 3px var(--text-color);
+  transition: 0.3s;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+.card-image-part {
+  width: 100%;
+  height: 50%;
+}
+.card-content-part {
+  width: 100%;
+  height: 50%;
+}
+
+.card-image-part img {
+  width: 100%;
+  height: 100%;
+}
+
+.card-heading {
+  font-size: 1.5rem;
+  margin: 10px 0px;
+}
+
+.card-description {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.project-card:hover {
+  box-shadow: 6px 6px 1px gray;
+  scale: 1.05;
+}
+
+/* ---------------  Services Section  --------------- */
+
+.services-section{
+  padding: 60px 0px;
+}
+
+.services-container .services {
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.services-container .services .card {
+  width: 330px;
+  text-align: center;
+  background-color: var(--acent-color);
+  padding: 20px 15px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.services-container .services .card:hover {
+  background: var(--secondary-color);
+}
+
+.services-container .services .card .content {
+  transition: 0.3s;
+}
+
+.services-container .services .card:hover .content {
+  transform: scale(1.07);
+}
+
+.services-container .services .card .content .icon {
+  padding: 5px 0;
+  color: white;
+}
+
+.services-container .services .card .content .icon i {
+  font-size: 40px;
+}
+
+.services-container .services .card:hover .content .title {
+  color: white;
+}
+
+.services-container .services .card .content .title {
+  padding: 5px 0;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--secondary-color);
+  transition: 0.3s;
+}
+
+/* ---------------  Contact Section  --------------- */
+
+.contact-section {
+  padding: 30px 0px;
+}
+
+/* contact section form  */
+
+.contact-container {
+  width: 100%;
+  min-height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-container {
+  width: 40%;
+  height: 100%;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 40px;
+  background-color: var(--acent-color);
+  color: white;
+  border-radius: 8px;
+}
+
+.chat-heading {
+  font-size: 2.5rem;
+  font-family: "Sofadi One", system-ui;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.left-details {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  gap: 10px;
+}
+.contacts i {
+  margin-right: 8px;
+}
+
+.right-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 30px;
+  height: 100%;
+}
+
+.right-container form input,
+textarea {
+  display: block;
+  width: 100%;
+}
+
+.form-input {
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  box-shadow: 0px 0px 3px gray;
+  margin-bottom: 20px;
+  padding: 10px 8px;
+  border-radius: 4px;
+}
+
+#message {
+  resize: none;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  box-shadow: 0px 0px 3px gray;
+  margin-bottom: 20px;
+  padding: 10px 8px;
+  border-radius: 4px;
+  width: 100%;
+  height: 185px;
+}
+
+/* ---------------  footer Section  --------------- */
+footer {
+  width: 100%;
+  background-color: var(--acent-color);
+  text-align: center;
+  position: relative;
+}
+
+.footer-section {
+  padding: 60px 0px;
+  margin-top: 40px;
+}
+
+.links a {
+  color: white;
+  margin-right: 20px;
+}
+
+.top-btn i {
+  font-size: 1.3rem;
+  background-color: var(--secondary-color);
+  padding: 10px 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-radius: 40px;
+}
+
+.f-copy-line {
+  color: white;
+  padding: 10px 0px;
+}
