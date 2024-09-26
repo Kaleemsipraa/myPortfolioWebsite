@@ -21,5 +21,5 @@ Check out the live demo of my portfolio website here:
 - **CSS3**: For styling and responsive design.
 - **JavaScript**: For interactive elements and animations.
 
-## 📂 Project Structure
+
 
